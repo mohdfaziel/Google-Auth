@@ -14,7 +14,9 @@ export class AuthService {
     try {
       await this.account.createOAuth2Session(
         OAuthProvider.Google,
-        "https://google-auth-black.vercel.app/",
+        conf.redirectUrl,
+         `${conf.redirectUrl}?failure=true`
+        
       );
     } catch (error) {
       if (error.code === 409) {
