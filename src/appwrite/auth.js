@@ -14,8 +14,7 @@ export class AuthService {
     try {
       await this.account.createOAuth2Session(
         OAuthProvider.Google,
-        "http://localhost:5173",
-        "http://localhost:5173?failure=true"
+        "https://google-auth-black.vercel.app/",
       );
     } catch (error) {
       if (error.code === 409) {
