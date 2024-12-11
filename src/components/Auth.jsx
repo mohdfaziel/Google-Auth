@@ -14,6 +14,7 @@ function Auth() {
       setLoader(true);
       try {
         const userInfo = await authService.getUser();
+        console.log(userInfo);
         if (userInfo) {
           dispatch(login(userInfo));
         }
@@ -33,6 +34,7 @@ function Auth() {
     try {
       await authService.loginWithGoogle();
       const userInfo = await authService.getUser();
+      console.log(userInfo);
       dispatch(login(userInfo));
     } catch (error) {
       console.error("Login failed:", error);
